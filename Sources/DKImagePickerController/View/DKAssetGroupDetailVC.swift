@@ -418,7 +418,7 @@ open class DKAssetGroupDetailVC: UIViewController,
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    open func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         if let asset = (collectionView.cellForItem(at: indexPath) as? DKAssetGroupDetailBaseCell)?.asset {
             return self.imagePickerController.canSelect(asset: asset)
         } else {
@@ -426,7 +426,7 @@ open class DKAssetGroupDetailVC: UIViewController,
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.isCameraCell(indexPath: indexPath) {
             collectionView .deselectItem(at: indexPath, animated: false)
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -437,7 +437,7 @@ open class DKAssetGroupDetailVC: UIViewController,
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         self.deselectAsset(atIndex: indexPath)
     }
     
